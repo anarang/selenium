@@ -1,0 +1,9 @@
+[set_url]
+url = www.example.com
+
+[set_reports_path]
+#set the path for reports folder 
+report_folder = ./reports
+
+[set_logs_path]
+log_folder = ./logs
