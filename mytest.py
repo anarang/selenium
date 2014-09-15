@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import unittest
+import time
 from ConfigParser import ConfigParser
 conf_file = open('config/config.conf')
 config = ConfigParser()
@@ -18,7 +19,6 @@ class TestSample(unittest.TestCase):
 			print self.base_url
 			global browser
 			browser = self.driver
-			
 			self.verificationErrors = []
 
 		def test_list_verification(self):
@@ -42,6 +42,13 @@ class TestSample(unittest.TestCase):
 			frameworks = ["Django","Flask"]
 			for f in frameworks:
 				self.assertIn(f, p.text.split("\n"), "Desired elements not present in list")
+
+		def test_image_presence(self):
+			whoa_url = self.base_url + "/whoa.html"
+			browser.get(whoa_url)
+			browser.find_element_by_id("showWhoa").click()
+			browser.find_element_by_xpath("//p[@id='pyWhoa']/img").is_displayed()
+			print browser.find_element_by_xpath("//p[@id='pyWhoa']/img").is_displayed()
 
 		def tearDown(self):
 			self.driver.close()
