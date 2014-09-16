@@ -942,10 +942,10 @@ class HTMLTestRunner(Template_mixin):
         name = t.id().split('.')[-1]
         doc = t.shortDescription() or ""
         desc = doc and ('%s %s' % (name, doc)) or name
-        if desc == 'test_search':
-            desc = test_cases['search_case']
-        elif desc == 'test_filter':
-            desc = test_cases['filter_case']
+        if desc == 'test_list_verification':
+            desc = test_cases['list_verification']
+        elif desc == 'test_image_presence':
+            desc = test_cases['image_verification']
         tmpl = has_output and self.REPORT_TEST_WITH_OUTPUT_TMPL or self.REPORT_TEST_NO_OUTPUT_TMPL
 
 #if you want to add the description to your test case in place of a dynamic test name,
