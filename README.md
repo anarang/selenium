@@ -1,6 +1,7 @@
 ## Sample test scripts
 
 ### Selenium with Python:
+It contains test scripts for a sample web application[1] which will be used as AUT at 'Test your Web Application with Selenium'[2], PyCon India[3], Bangalore, 2014. 
 
 #### Pre-requisites:
 <pre>
@@ -23,6 +24,7 @@ $ pip-pyton install -U selenium     #Install Selenium Python bindings
 <pre>
 $ mv config/config.conf.sample config/config.conf
 # Replace www.example.com with a suitable URL where against which you want to run your tests
+</pre>
 
 ### Execution:
 1. To run the test suite:
@@ -42,8 +44,9 @@ $ python mytest.py -t image_verification
 
 4. Basic Selenium script outline is available in basic_str.py
 
-
-
+[1] https://github.com/anarang/placebo
+[2] http://in.pycon.org/funnel/2014/184-test-your-web-app-with-selenium
+[3] http://in.pycon.org/2014/
 
 
 
