@@ -42,7 +42,7 @@ class TestSample(unittest.TestCase):
 
 			browser.find_element_by_id("gotoList").click()
 			browser.find_element_by_id("showList").click()
-			frameworks = ["Django","Flask", "Pylons", "Pyramid"]
+			frameworks = ["Hello","Hola", "Konnichiwa", "Bonjour"]
 			list_elements = browser.find_elements_by_class_name("list")
 			print "\nList of elements:"
 			for ele in list_elements:
@@ -56,7 +56,7 @@ class TestSample(unittest.TestCase):
 			# 	self.assertIn(f, p.text.split("\n"), "Desired elements not present in list")
 
 		#How to skip any test -> @unittest.skip("demonstrating skipping")
-		def test_image_presence(self):
+		def test_picture_presence(self):
 			whoa_url = self.base_url + "/whoa.html"
 			browser.get(whoa_url)
 			browser.find_element_by_id("showWhoa").click()
@@ -68,12 +68,12 @@ class TestSample(unittest.TestCase):
 			browser.close()
 
 image_verification = unittest.TestSuite()
-image_verification.addTest(TestSample('test_image_presence'))
+image_verification.addTest(TestSample('test_picture_presence'))
 
 list_verification = unittest.TestSuite()
 list_verification.addTest(TestSample('test_list_verification'))
 
-all_tests = unittest.TestSuite([image_verification, list_verification])
+all_tests = unittest.TestSuite([list_verification, image_verification])
         
 parser = argparse.ArgumentParser(
     prog='main',
